@@ -4,11 +4,20 @@ import sys
 mr = MapReduce.MapReduce()
 
 def mapper(record):
-	key = record[0]
+	
 	value = record[1]
+	key = record[0]
+
+
 
 	for word in value.split():
 		mr.emit_intermediate(word,key)
+		
+def check(key,list_of_values):
+	count = 0
+	for value in list_of_values:
+		count+=value
+	mr.emit((key,count))
 
 def reducer(key, list_of_values):
 	result=[]
