@@ -16,8 +16,8 @@ def cleanup():
 
 def scrap_data():
     process = CrawlerProcess(get_project_settings())
-    process.crawl('posolstva')
-    process.crawl('odissey')
+    process.crawl('posolstva_my')
+    process.crawl('odissey_my')
     process.start()
 
 
