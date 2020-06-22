@@ -10,9 +10,6 @@ from typing import Optional, List
 
 
 
-def random_text():
-    ascii = [chr(code) for code in range(ord('a'), ord('z')+1)]
-    return ''.join([sample(ascii, 1)[0] for _ in range(randint(10, 20))])
 
 class User:
     conn: redis.Redis
