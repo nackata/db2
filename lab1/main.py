@@ -22,12 +22,13 @@ def scrap_data():
 
 
 def task1():
-    print("Task #1")
     root = etree.parse("task1.xml")
     pages = root.xpath("//page")
     maxText = {}
     firstMax = 0
+
     for page in pages:
+
         url = page.xpath("@url")[0]
         count = page.xpath("count(fragment[@type='text'])")
         if count > firstMax:
